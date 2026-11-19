@@ -1,0 +1,277 @@
+:root {
+  --navy: #0b1d3a;
+  --blue: #1d428a;
+  --red: #c8102e;
+  --bg: #f2f3f5;
+  --border: #e1e4ea;
+  --text: #111827;
+  --muted: #6b7280;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ---------- Top bar ---------- */
+nav {
+  background: var(--navy);
+  border-bottom: 3px solid var(--red);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav .wrap {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 56px;
+}
+
+.brand {
+  color: white;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-right: auto;
+  white-space: nowrap;
+}
+
+nav a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+nav a:hover {
+  color: white;
+}
+
+/* ---------- Layout ---------- */
+section {
+  margin: 32px 0;
+  scroll-margin-top: 72px; /* keeps headings below the sticky bar */
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+h2 {
+  margin: 0 0 4px;
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 12px;
+  overflow-x: auto;
+}
+
+.banner {
+  background: var(--blue);
+  color: white;
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 12px;
+}
+
+.banner h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.muted {
+  color: var(--muted);
+  margin: 4px 0;
+}
+
+/* ---------- Inputs and buttons ---------- */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+input,
+select,
+button {
+  font: inherit;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: white;
+}
+
+.wide {
+  flex: 1;
+  min-width: 200px;
+}
+
+button {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--navy);
+}
+
+button.outline {
+  background: white;
+  color: var(--blue);
+}
+
+button.outline:hover {
+  background: #eef2fa;
+}
+
+/* ---------- Tables ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+}
+
+th {
+  text-align: left;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 8px 10px;
+  border-bottom: 2px solid var(--border);
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+tr:hover td {
+  background: #f7f8fb;
+  cursor: pointer;
+}
+
+td.name {
+  font-weight: 700;
+  color: var(--blue);
+}
+
+/* ---------- Player stats ---------- */
+.player:empty {
+  display: none; /* hidden until you click a player */
+}
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tile {
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 12px 8px;
+  text-align: center;
+}
+
+.tile strong {
+  display: block;
+  font-size: 1.4rem;
+}
+
+.tile span {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* ---------- Score cards ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.game p {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0;
+}
+
+.game .status {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--red);
+  text-transform: uppercase;
+}
+
+.game button {
+  margin-top: 8px;
+}
+
+/* ---------- Ratings ---------- */
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.stars {
+  color: #f59e0b;
+  margin-left: 8px;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.8rem;
+  padding: 24px 16px 40px;
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 500px) {
+  nav .wrap {
+    gap: 14px;
+  }
+  .brand {
+    font-size: 0.95rem;
+  }
+  nav a {
+    font-size: 0.8rem;
+  }
+}
